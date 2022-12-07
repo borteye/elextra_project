@@ -1,0 +1,229 @@
+.product_search {
+    width: 100%;
+}
+
+.product_search .container {
+    padding: 3rem 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.product_search .viewType {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product_search .icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.product_search .grid_icon {
+    height: 18px;
+}
+
+/* .product_search .grid_icon:hover,
+.product_search .list_icon:hover {
+    color: var(--primary-color);
+} */
+
+.product_search .grid_icon :hover,
+.product_search .list_icon :hover {
+    color: var(--primary-color)
+}
+
+.icon_active {
+    color: var(--primary-color)
+}
+
+.product_search .list_icon:active {
+    color: var(--primary-color);
+}
+
+.product_search .list_icon,
+.product_search .grid_icon {
+    font-size: 1.2rem;
+}
+
+/* -----viewType=Grid--Start----- */
+
+.product_search .details_grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
+    align-items: center;
+    gap: 1.04rem;
+    background-color: whitesmoke;
+    padding: 2rem 0rem;
+}
+
+.product_search .card_grid {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.product_search .product_image_grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product_search .product_image_grid img {
+    max-width: 250px;
+}
+
+.product_search .product_details_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.product_search .section_one_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+
+/* -----viewType=Grid--End----- */
+
+/* ------viewType=Neutral--Start------ */
+.product_search .product_shipping {
+    background-color: var(--primary-color);
+    width: 120px;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: white;
+}
+
+.product_search .product_title,
+.product_search .product_price {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+/* ------viewType=Neutral--End------ */
+
+
+/* -----viewType=List--Start----- */
+
+.product_search .details_list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: whitesmoke;
+    padding: 2rem;
+}
+
+.product_search .card_list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.product_search .product_image_list img {
+    max-width: 250px;
+}
+
+.product_search .product_details_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 60%;
+}
+
+.product_search .section_one_list {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+
+/* -----viewType=List--End----- */
+
+
+/* ------pagination-Styling-Start------ */
+
+.product_search .pagination {
+    margin-top: 1rem;
+}
+
+.product_search .pagination .Previous,
+.product_search .pagination .Next {
+    display: block;
+}
+
+.product_search .pagination .Previous_hide,
+.product_search .pagination .Next_hide {
+    display: none;
+}
+
+.product_search .pagination .pagination_btns {
+    width: 100%;
+    height: 40px;
+    padding: 0.5rem 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.product_search .pagination .pagination_btns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.product_search .pagination .pagination_btns a:hover {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.product_search .pagination .paginationActive a {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+
+/* ------pagination-Styling-End------ */
+
+/* ----media-Query-Start---- */
+
+@media screen and (max-width: 768px) {
+    .product_search .container {
+        padding: 3rem 2rem;
+    }
+}
+
+@media screen and (max-width: 832px) {
+    .list_icon {
+        display: none;
+    }
+
+    .grid_icon {
+        color: var(--primary-color);
+    }
+}
+
+
+/* ----media-Query-End---- */

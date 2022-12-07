@@ -1,0 +1,83 @@
+.hotSales {
+    width: 100%;
+    max-width: 1200px;
+    margin: 3rem auto;
+}
+
+.hotSales .container {
+    width: 100%;
+}
+
+.hotSales .content {
+    padding: 0rem 2rem;
+}
+
+.hotSales .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hotSales .section_one {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.hotSales .section_two {
+    color: #7f7f7f;
+}
+
+.hotSales .fire {
+    font-size: 25px;
+    color: var(--primary-color);
+}
+
+.hotSales .items {
+    width: 100%;
+    margin-top: 1.125rem;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    overflow-x: scroll;
+}
+
+.hotSales .card {
+    background-color: white;
+    min-width: 210px;
+    padding: 1rem 0.5rem;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.hotSales hr{
+    margin: 0.5rem 0;
+}
+
+.hotSales .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hotSales img {
+    height: 13rem;
+}
+
+.hotSales .product_price {
+    display: flex;
+    align-items:flex-end;
+    margin-top: 0.5rem;
+    gap: 1rem;
+}
+
+.hotSales .new_price{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.hotSales .old_price {
+    text-decoration: line-through;
+    color: #7f7f7f;
+}

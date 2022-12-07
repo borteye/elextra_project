@@ -1,0 +1,305 @@
+.your_bag {
+    width: 100%
+}
+
+.your_bag .container {
+    padding: 4rem 5rem;
+}
+
+.your_bag .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+
+.your_bag .title {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.your_bag .section_one {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4rem 0;
+}
+
+.your_bag .continue_shopping,
+.your_bag .bag_wishlist,
+.your_bag .check_out {
+    width: 33.33%;
+}
+
+.your_bag .check_out {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.your_bag .bag_wishlist {
+    display: flex;
+    font-size: 1.1rem;
+    justify-content: center;
+    text-decoration: underline;
+    gap: 1.5rem;
+}
+
+.your_bag .section_two {
+    display: flex;
+}
+
+/* .your_bag .shopping_bag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.your_bag .one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.your_bag .about_product {
+    margin-left: 1.5rem;
+}
+
+.your_bag img {
+    max-width: 250px;
+}
+
+.your_bag .details {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.your_bag .count {
+    margin: 0 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 0.3rem 0.7rem;
+}
+
+.your_bag .subSection_one {
+    width: 70%;
+}
+
+.your_bag .subSection_two {
+    width: 30%;
+    display: flex;
+    justify-content: right;
+    /* border: 1px solid red; */
+}
+
+.your_bag .order_summary {
+    width: 100%;
+    max-width: 324px;
+    min-width: 324px;
+    /* min-width: 400px; */
+    background-color: white;
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.your_bag .order_summary .title {
+    font-size: 2.125rem;
+    font-weight: 400;
+}
+
+.your_bag .order_summary .title {
+    text-align: left;
+}
+
+.your_bag .subtotal,
+.your_bag .esti_shipping,
+.your_bag .total,
+.your_bag .shipping_discount {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.2rem 0;
+}
+
+.your_bag .subtotal,
+.your_bag .esti_shipping,
+.your_bag .shipping_discount {
+    font-size: 1.12rem;
+}
+
+.your_bag .total {
+    font-size: 1.7rem;
+}
+
+.your_bag .subSection_two .check_out_btn {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.your_bag .cont_shopping_btn {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 1rem 0.7rem;
+    font-size: 1.1rem;
+}
+
+.your_bag .check_out_btn {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0.7rem;
+    font-size: 1.1rem;
+}
+
+.your_bag .counter {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+
+}
+
+.your_bag .price {
+    font-size: 2.5rem;
+    color: #7f7f7f;
+}
+
+.your_bag .counter_price_bg {
+    display: flex;
+    margin-right: 5rem;
+    gap: 2rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.your_bag .counter_price_small {
+    display: none;
+    gap: 2rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.your_bag .add,
+.your_bag .minus {
+    color: black;
+    cursor: pointer;
+}
+
+.your_bag button {
+    cursor: pointer;
+}
+
+/* ----mediaQuery-Start---- */
+
+@media screen and (max-width: 1108px) {
+    .your_bag .details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+@media screen and (max-width: 981px) {
+    .your_bag .section_two {
+        gap: 5rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .your_bag .subSection_one {
+        width: 100%;
+    }
+
+    .your_bag .subSection_two {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .your_bag .details {
+        flex-direction: row;
+    }
+
+}
+
+@media screen and (max-width: 878px) {
+    .your_bag .bag_wishlist {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .your_bag .container {
+        padding: 4rem 2rem;
+    }
+}
+
+@media screen and (max-width: 699px) {
+    .your_bag .details {
+        flex-direction: column;
+    }
+
+    .your_bag .counter_price_bg {
+        display: none;
+    }
+
+    .your_bag .counter_price_small {
+        display: flex;
+
+    }
+}
+
+@media screen and (max-width: 572px) {
+
+    .your_bag .cont_shopping_btn,
+    .your_bag .check_out_btn {
+        font-size: 0.8rem;
+        padding: 1rem 0.7rem;
+    }
+
+    .your_bag .section_one {
+        gap: 4rem;
+        /* border: 1px solid red; */
+    }
+
+    .your_bag .title {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .your_bag img {
+        max-width: 200px;
+    }
+
+    .your_bag .counter {
+        font-size: 1.2rem;
+    }
+
+    .your_bag .price {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .your_bag .order_summary {
+        min-width: 200px;
+    }
+
+    .your_bag .order_summary .title {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .your_bag img {
+        max-width: 150px;
+    }
+}
+
+/* ----mediaQuery-End---- */

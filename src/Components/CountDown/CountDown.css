@@ -1,0 +1,23 @@
+.count_down .timer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 520;
+    color: red;
+}
+
+.count_down .seconds p {
+    background-color: red;
+    color: white;
+    font-weight: 520;
+    padding: 0.2rem
+}
+
+.count_down span {
+    margin: 0 0.15rem;
+}
+
+.count_down .ends {
+    margin-right: 0.3rem;
+}

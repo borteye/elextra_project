@@ -1,0 +1,199 @@
+.flashDealsPage {
+    /* height: 100vh; */
+    width: 100%;
+}
+
+.flashDealsPage .container {
+    padding: 3rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.flashDealsPage .content {
+    padding: 0 0rem;
+}
+
+.flashDealsPage .title {
+    display: flex;
+    align-items: center;
+    max-height: 50px;
+    margin-bottom: 3rem;
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    color: white
+}
+
+.flashDealsPage .head,
+.flashDealsPage .countDown {
+    width: 50%;
+}
+
+.flashDealsPage .head {
+    font-size: 1.2rem;
+    font-weight: 550;
+}
+
+.flashDealsPage .countDown {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flashDealsPage .card {
+    background-color: white;
+    padding: 1rem;
+    max-width: 260px;
+    position: relative;
+    transition: 0.2s ease;
+    cursor: pointer;
+    border: 1px solid red;
+
+}
+
+.flashDealsPage .card:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.flashDealsPage .image {
+    text-align: center;
+}
+
+.flashDealsPage img {
+    max-width: 220px;
+    text-align: center;
+}
+
+.flashDealsPage .discount {
+    background-color: var(--primary-color);
+    width: 50px;
+    text-align: center;
+    padding: 0.5rem 0;
+    color: white;
+    font-weight: 520;
+    font-size: 0.85rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.flashDealsPage .bolt {
+    font-size: 1.25rem;
+}
+
+.flashDealsPage .discount_price {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.flashDealsPage .original_price {
+    color: #7f7f7f;
+    text-decoration: line-through;
+    font-size: 1.125rem;
+}
+
+.flashDealsPage .add_to_cart {
+    width: 100%;
+}
+
+.flashDealsPage .add_to_cart button {
+    width: 100%;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    border-radius: 3px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.flashDealsPage .detials {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.flashDealsPage .products_overall {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+/* ------pagination-Styling-Start------ */
+
+.flashDealsPage .pagination {
+    margin-top: 1rem;
+}
+
+.flashDealsPage .pagination .pagination_btns {
+    width: 100%;
+    height: 40px;
+    padding: 0.5rem 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.flashDealsPage .pagination .pagination_btns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.flashDealsPage .pagination .pagination_btns a:hover {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.flashDealsPage .pagination .paginationActive a {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+
+/* ------pagination-Styling-End------ */
+
+@media screen and (max-width:768px) {
+    .flashDealsPage .container {
+        padding: 3rem 2rem;
+    }
+
+    .flashDealsPage .content {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width:747px) {
+
+
+    .flashDealsPage .products_overall {
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fill, 350px)
+    }
+
+    .flashDealsPage .card {
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 454px) {
+
+    .flashDealsPage .products_overall {
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fill, 300px)
+    }
+
+    .flashDealsPage .card {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}

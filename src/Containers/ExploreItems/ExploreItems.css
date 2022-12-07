@@ -1,0 +1,112 @@
+.explore_items {
+    width: 100%;
+}
+
+.explore_items .container {
+    padding: 3rem 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.explore_items .card_container {
+    padding: 0 2.5rem;
+}
+
+.explore_items .card {
+    max-width: 300px;
+    margin-top: 2rem;
+    border: 1px solid #e7e7e7;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.explore_items .product_image {
+    max-width: 250px;
+    max-height: 250px;
+    margin: 0 auto;
+}
+
+.explore_items img {
+    width: 100%;
+}
+
+.explore_items button {
+    padding: 0.7rem 1.3rem;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    border: none;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+
+.explore_items .product_details {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+}
+
+.explore_items .product_price {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.explore_items .shipping_day {
+    background-color: var(--primary-color);
+    width: 120px;
+    padding: 0.2rem 0.3rem;
+    border-radius: 2px;
+    color: white;
+}
+
+.explore_items .mySwiper_sm {
+    display: none;
+}
+
+.explore_items .mySwiper_min {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .explore_items .card {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .explore_items .mySwiper_min {
+        display: block;
+    }
+
+    .explore_items .mySwiper_bg {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .explore_items .container {
+        padding: 3rem 2rem;
+    }
+
+    .explore_items button {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .explore_items .mySwiper_min {
+        display: none;
+    }
+
+    .explore_items .mySwiper_sm {
+        display: block;
+    }
+
+    .explore_items .card {
+        max-width: 280px;
+        margin: 0 auto;
+        margin-top: 3rem;
+    }
+}

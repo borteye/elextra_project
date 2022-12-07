@@ -1,0 +1,391 @@
+.payment {
+  width: 100%;
+}
+
+.payment .container {
+  padding: 2rem 5rem;
+}
+
+.payment .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.payment .section_one {
+  width: 65%;
+}
+
+.payment .section_two {
+  width: 35%;
+}
+
+.payment .title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.payment .shipping_add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  gap: 2rem;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+.payment .shipping_add .sec_one {
+  width: 80%;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.payment .shipping_add .sec_two {
+  width: 20%;
+  display: flex;
+  justify-content: right;
+}
+
+.payment .address {
+  font-weight: bolder;
+  max-width: 400px;
+}
+
+.payment .shipping_add button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.payment .payment_head {
+  background-color: #e4e4e4;
+  padding: 1.2rem 1rem;
+  border-radius: 8px;
+  font-weight: 520;
+}
+.payment .payment_head span {
+  padding-right: 1rem;
+  border-radius: 8px;
+}
+
+.payment .payment_methods {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.payment .payment_methods ul {
+  list-style-type: none;
+}
+
+.payment .creditDebitOverall {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.payment .radioInput {
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+.payment .card_number {
+  margin: 1.5rem 0;
+}
+
+.payment .card_number input {
+  outline: none;
+  border: 1px solid #e4e4e4;
+  border-radius: 6.5px;
+  height: 2.4rem;
+  max-width: 350px;
+  padding-left: 3%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.validD_Cvv_Btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.payment .card_number,
+.payment .valid_date,
+.payment .cvv {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.payment .valid_date {
+  display: flex;
+}
+
+.payment .valid_date select {
+  height: 2.4rem;
+  outline: none;
+}
+
+.payment .day_month {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #e4e4e4;
+  padding: 0 0.5rem;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.payment .cvv input {
+  height: 2.4rem;
+  max-width: 120px;
+  outline: none;
+  border: 1px solid #e4e4e4;
+  border-radius: 7px;
+  padding-left: 5%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.payment .payBtn {
+  margin-top: 1.5rem;
+}
+.payment .payBtn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.8rem;
+  padding: 1rem 2rem;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 7px;
+  font-size: 1.05rem;
+}
+
+.payment .payment_methods .legit {
+  margin: 1.5rem 0 1.5rem 2rem;
+}
+
+.payment .paypalOverall {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.payment .acceptT_C {
+  align-items: center;
+  gap: 0;
+  margin: 1.5rem 0 1.5rem 2rem;
+}
+
+.payment .acceptT_C span {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.payment .order_section {
+  border: 1px solid #e4e4e4;
+  padding: 1rem 1.2rem 0 1.2rem;
+  border-radius: 8px;
+}
+
+.payment .section_two .head {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+}
+
+.payment .section_two ul {
+  list-style: none;
+}
+.payment .section_two ul li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+
+.payment .section_two .sec_one,
+.payment .section_two .sec_two {
+  width: 50%;
+}
+
+.payment .product_image {
+  text-align: center;
+}
+
+.payment .section_two img {
+  max-height: 150px;
+  max-width: 150px;
+  background-color: #e4e4e4;
+  border-radius: 10px;
+}
+
+.payment .section_two .product_name,
+.payment .section_two .price {
+  font-weight: bold;
+}
+
+.payment .product_details {
+  margin: 1rem 0;
+}
+.payment .section_two .product_price {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.payment .section_two .delivery,
+.payment .section_two .discount {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin: 1.4rem 0;
+}
+
+.payment .dLabel,
+.payment .dDetails,
+.payment .disLabel,
+.payment .discount_price {
+  width: 50%;
+}
+
+.payment .dDetails,
+.payment .discount_price {
+  display: flex;
+  margin-left: 3rem;
+}
+
+.payment .delivery_price,
+.payment .discount_price {
+  font-weight: bold;
+}
+
+.payment .total {
+  background-color: #e4e4e4;
+  /* width: 100%; */
+  padding: 1.2rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+/* ------mediaQueries------ */
+
+@media screen and (max-width: 1102px) {
+  .payment .section_two img {
+    max-height: 120px;
+    max-width: 120px;
+  }
+  .payment .radioInput {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 887px) {
+  .payment .section_two ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .payment .section_two .sec_one,
+  .payment .section_two .sec_two {
+    width: 100%;
+  }
+
+  .payment .section_two .sec_two {
+    text-align: center;
+  }
+  .payment .section_two .product_price {
+    justify-content: center;
+  }
+  .payment .content {
+    gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 879px) {
+  .payment .dDetails,
+  .payment .discount_price {
+    flex-direction: column;
+  }
+
+  .payment .shipping_add {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .payment .shipping_add .sec_one {
+    width: 100%;
+  }
+  .payment .shipping_add .sec_two {
+    width: 100%;
+    justify-content: left;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .payment .content .section_two {
+    display: none;
+  }
+  .payment .content .section_one {
+    width: 100%;
+  }
+
+  .payment .shipping_add {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .payment .shipping_add .sec_one {
+    width: 80%;
+  }
+  .payment .shipping_add .sec_two {
+    width: 20%;
+    justify-content: left;
+  }
+}
+
+@media screen and (max-width: 662px) {
+  .payment .shipping_add {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .payment .shipping_add .sec_one {
+    width: 100%;
+  }
+  .payment .shipping_add .sec_two {
+    width: 100%;
+    justify-content: left;
+  }
+}
+
+@media screen and (max-width: 612px) {
+  .payment .validD_Cvv_Btn {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .payment .container {
+    padding: 2rem 2rem;
+  }
+  /* .payment .card_number input {
+    width: 215px;
+  } */
+
+  .payment .creditDebitOverall {
+    width: 100%;
+    gap: 0.3rem;
+  }
+}

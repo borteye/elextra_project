@@ -1,0 +1,139 @@
+.signUp {
+    width: 100%;
+}
+
+.signUp .container {
+    padding: 4rem;
+}
+
+/* .signUp .content {
+    border: 1px solid red;
+} */
+
+.signUp .overall_signUp {
+    display: flex;
+}
+
+.signUp .section_one {
+    background-color: blueviolet;
+    padding: 5%;
+    width: 40%;
+}
+
+.signUp .section_two {
+    width: 34%;
+    padding: 5% 8%;
+    background-color: white;
+}
+
+.signUp .section_one .image {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.signUp .section_one img {
+    width: 100%;
+    max-width: 330px;
+    max-height: 330px;
+}
+
+.signUp .preamble {
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.signUp .section_one .login_btn {
+    width: 100%;
+}
+
+.signUp .section_one .login_btn button {
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.signUp .preamble,
+.signUp .section_one .login_btn {
+    margin-top: 3rem;
+}
+
+.signUp .title {
+    width: 100%;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.signUp .alert {
+    color: #a8a5a5;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.signUp .username,
+.signUp .email,
+.signUp .password {
+    display: flex;
+    flex-direction: column;
+}
+
+.signUp label {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.signUp form {
+    margin-top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.signUp input {
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    background-color: #e4e4e4;
+    border-radius: 3px;
+    padding-left: 1rem;
+}
+
+.signUp .forgot_password {
+    width: 100%;
+    text-align: right;
+    margin-top: 0.5rem;
+}
+
+.signUp .signUp_btn {
+    width: 100%;
+    margin-top: 2.5rem;
+}
+
+.signUp .signUp_btn button {
+    width: 100%;
+    height: 2.5rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.signUp .existing_acc {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.signUp .login {
+    color: var(--primary-color);
+    font-weight: 520;
+    cursor: pointer;
+}

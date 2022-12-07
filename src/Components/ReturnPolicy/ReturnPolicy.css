@@ -1,0 +1,36 @@
+.return_policy {
+    width: 100%;
+}
+
+.return_policy .overlay {
+    background: rgba(0, 0, 0, 0.301);
+    width: 100%;
+    height: 268.6vh;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+.return_policy .content {
+    background-color: white;
+    max-width: 410px;
+    padding: 4rem 2rem;
+    margin: 25% auto;
+    position: relative;
+}
+
+.return_policy .close_policy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.return_policy .policy_header {
+    font-weight: 550;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
