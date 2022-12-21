@@ -25,8 +25,6 @@ function App() {
   const [error, setError] = useState(false);
   const [product, setProduct] = useState([]);
   const [cartProduct, setCartProduct] = useState([]);
-  const [cartTotal, setCartTotal] = useState();
-  const [grabTotal, setGrabTotal] = useState([]);
   const [reducerValue, forceUpdate] = useReducer((x) => x + 1, 0);
 
   //onScroll start
@@ -40,6 +38,19 @@ function App() {
 
   window.addEventListener("scroll", handleScroll);
   //onScroll end
+
+  //resize screen start
+
+  const resizeHandle = () => {
+    if (window.innerWidth <= 768) {
+      setScrolled(false);
+    } else {
+      setScrolled(true);
+    }
+  };
+
+  window.addEventListener("resize", resizeHandle);
+  //resize screen end
 
   //Data fetching for LandingPge start
   useEffect(() => {
@@ -59,7 +70,6 @@ function App() {
   //Data fetching for LandingPage end
 
   //Data fetching from CART start
-
   useEffect(() => {
     const fetchCart = async () => {
       const result = await axios.get("http://localhost:3009/cart");
@@ -69,75 +79,109 @@ function App() {
     };
     fetchCart();
   }, [reducerValue]);
-
   //Data fetching from CART end
 
   //Add product to CART start
   let qty = 1;
 
-  const addToCart = async (item, ID) => {
-    let isExisting = false;
+  const addToCart = async (item, ID, name, price) => {
+    try {
+      let isExisting = false;
 
-    const cartResult = await axios.get("http://localhost:3009/cart");
+      const cartResult = await axios.get("http://localhost:3009/cart");
 
-    if (cartResult.data.length === 0) {
-      const cartItems = {
-        id: item.id,
-        productName: item.name,
-        productPrice: item.price,
-        productQuantity: qty,
-        productTotal: item.price * qty,
-      };
-      await axios.post("http://localhost:3009/cart", cartItems);
-    } else {
-      cartResult.data.map((items) => {
-        if (ID === items.id) {
-          items.productQuantity += 1;
-          const cartItems = {
-            id: item.id,
-            productName: item.name,
-            productPrice: item.price,
-            productQuantity: items.productQuantity,
-            productTotal: item.price * items.productQuantity,
-          };
-          axios.put(`http://localhost:3009/cart/${items.id}`, cartItems);
-          isExisting = true;
-          const totalss = {
-            id: cartItems.id,
-            total: cartItems.productPrice,
-          };
-          const previewTotal = grabTotal;
-          previewTotal.push(totalss);
-          setGrabTotal(previewTotal);
-          console.log(grabTotal);
-          grabTotal.map((prices) => {
-            if (totalss.id === prices.id) {
-              let tot = parseFloat(prices.total);
-              prices.total = tot;
-              console.log(grabTotal);
-            }
-          });
-        }
-      });
-      if (isExisting == false) {
+      if (cartResult.data.length === 0) {
         const cartItems = {
           id: item.id,
-          productName: item.name,
-          productPrice: item.price,
+          productName: name,
+          productPrice: price,
           productQuantity: qty,
-          productTotal: item.price * qty,
+          productTotal: price * qty,
         };
         await axios.post("http://localhost:3009/cart", cartItems);
+      } else {
+        cartResult.data.map((items) => {
+          if (ID === items.id) {
+            items.productQuantity += 1;
+            const cartItems = {
+              id: item.id,
+              productName: name,
+              productPrice: price,
+              productQuantity: items.productQuantity,
+              productTotal: price * items.productQuantity,
+            };
+
+            axios.put(`http://localhost:3009/cart/${items.id}`, cartItems);
+            isExisting = true;
+          }
+        });
+        if (isExisting === false) {
+          const cartItems = {
+            id: item.id,
+            productName: name,
+            productPrice: price,
+            productQuantity: qty,
+            productTotal: price * qty,
+          };
+          await axios.post("http://localhost:3009/cart", cartItems);
+        }
       }
+      toast.success("Added Product To Cart");
+      forceUpdate();
+    } catch (error) {
+      alert(error);
     }
-
-    //getCartTotal start
-
-    //getCartTotal end
-
-    forceUpdate();
   };
   //Add product to CART end
+
+  //Getting Cart totalPrice start
+  const totalPrice = cartProduct.reduce(
+    (price, item) => price + item.productQuantity * item.productPrice,
+    0
+  );
+  //Getting Cart totalPrice end
+
+  //Reduce Product Quantity in Cart start
+  const reduceQuantity = async (item, ID, name, price) => {
+    try {
+      const cartResult = await axios.get("http://localhost:3009/cart");
+
+      cartResult.data.map((items) => {
+        if (ID === items.id) {
+          items.productQuantity -= 1;
+          const cartItems = {
+            id: item.id,
+            productName: name,
+            productPrice: price,
+            productQuantity: items.productQuantity,
+            productTotal: price * items.productQuantity,
+          };
+          if (items.productQuantity === 0) {
+            axios.delete(`http://localhost:3009/cart/${item.id}`);
+          }
+          axios.put(`http://localhost:3009/cart/${items.id}`, cartItems);
+        }
+      });
+      toast.error("Removed product from cart");
+      forceUpdate();
+    } catch (error) {}
+  };
+  //Reduce Product Quantity in Cart end
+
+  //Delete From Cart Start
+  const removeItem = async (ID) => {
+    try {
+      const cartResult = await axios.get("http://localhost:3009/cart");
+      cartResult.data.map((item) => {
+        if (ID === item.id) {
+          axios.delete(`http://localhost:3009/cart/${item.id}`);
+        }
+      });
+      toast.error("Removed product from cart");
+      forceUpdate();
+    } catch (error) {}
+  };
+  //Delete From Cart End
 
   return (
     <div className="App">
@@ -148,7 +192,10 @@ function App() {
           search={search}
           scrolled={scrolled}
           cartProduct={cartProduct}
-          cartTotal={cartTotal}
+          totalPrice={totalPrice}
+          addToCart={addToCart}
+          reduceQuantity={reduceQuantity}
+          removeItem={removeItem}
         />
         <Routes>
           <Route path="/login" exact element={<Login />} />
@@ -168,20 +215,33 @@ function App() {
           <Route
             path="/productResult"
             exact
-            element={<ProductSearch search={search} />}
+            element={<ProductSearch search={search} data={product} />}
           />
           <Route
-            path="/productPreview/:id/:category/:name"
+            path="/productPreview"
+            // path="/productPreview/:id/:category/:name"
             exact
             element={<ProductPreview />}
           />
-          <Route path="/yourBag" exact element={<YourBag />} />
           <Route path="/check-out" exact element={<CheckOut />} />
           <Route path="/flash-sales" exact element={<FlashDealsPage />} />
           <Route
             path="/flash-sales-terms"
             exact
             element={<FlashDealsTandC />}
+          />
+          <Route
+            path="/yourBag"
+            exact
+            element={
+              <YourBag
+                cartProduct={cartProduct}
+                addToCart={addToCart}
+                reduceQuantity={reduceQuantity}
+                removeItem={removeItem}
+                totalPrice={totalPrice}
+              />
+            }
           />
           <Route path="/payment" exact element={<Payment />} />
         </Routes>

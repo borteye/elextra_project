@@ -126,6 +126,8 @@
 .payment .valid_date select {
   height: 2.4rem;
   outline: none;
+  border: none;
+  background-color: transparent;
 }
 
 .payment .day_month {

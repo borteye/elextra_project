@@ -11,7 +11,7 @@
       "delivery_date": "Sep 15 - 22",
       "ships_from": "Elextra",
       "sold_by": "Oydisen Electronics",
-      "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quae",
+      "about": "Lorem ipsum dolor sit amet",
       "image": "./Assets/Laptop.png",
       "preview_aboutProduct": [
         {
@@ -131,23 +131,93 @@
       "price_decimal": "00",
       "shipping_price": "6.88",
       "shipping_days": "3+ day Shipping",
-      "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quae"
-    }
-  ],
-  "cart": [
-    {
-      "id": "001",
-      "productName": "ASUS",
-      "productPrice": "1029",
-      "productQuantity": 46,
-      "productTotal": 47334
+      "about": "Lorem ipsum dolor sit amet"
     },
     {
       "id": "002",
-      "productName": "Nintendo",
-      "productPrice": "299",
-      "productQuantity": 24,
-      "productTotal": 7176
+      "name": "Nintendo",
+      "image": "./src/Assets/Laptop.png",
+      "category": "GAMES",
+      "price": "299",
+      "price_decimal": "00",
+      "shipping_price": "6.88",
+      "shipping_days": "3+ day Shipping",
+      "about": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "id": "002",
+      "name": "Nintendo",
+      "image": "./src/Assets/Laptop.png",
+      "category": "GAMES",
+      "price": "299",
+      "price_decimal": "00",
+      "shipping_price": "6.88",
+      "shipping_days": "3+ day Shipping",
+      "about": "Lorem ipsum dolor sit amet"
+    }
+  ],
+  "cart": [],
+  "checkoutInfo": [
+    {
+      "shipping_email": "gabrielborteye12199@gmail.com",
+      "shipping_firstName": "Gabriel",
+      "shipping_lastName": "Borteye",
+      "shipping_address1": "Leisure Street",
+      "shipping_city": "Accra",
+      "shipping_state": "",
+      "shipping_zipCode": "00233",
+      "shipping_phone": "0594863768",
+      "shipping_deliveryType": "6.00",
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "shipping_state": "",
+      "shipping_phone": "",
+      "shipping_deliveryType": "6.00",
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "shipping_deliveryType": "12.00",
+      "id": 15
+    },
+    {
+      "id": 16
     }
   ]
 }

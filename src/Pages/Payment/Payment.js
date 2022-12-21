@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Payment.css";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import MacBook from "../../Assets/Mac.png";
 
 function Payment() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <>

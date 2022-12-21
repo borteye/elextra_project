@@ -1,23 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
-// import menuGrid from "../../svgIcons/menu-grid-svgrepo-com.svg";
 import notification from "../../svgIcons/notification-svgrepo-com.svg";
 import cart from "../../svgIcons/cart-svgrepo-com.svg";
-import Mac from "../../Assets/Mac.png";
-// import profile from "../../svgIcons/user-profile-svgrepo-com.svg";
 import { FiSearch } from "react-icons/fi";
 import { GoGrabber } from "react-icons/go";
 import { FaTrash } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
-import { useSelector } from "react-redux";
-import ProductSearch from "../../Pages/ProductSearch/ProductSearch";
 import { useNavigate, Link } from "react-router-dom";
-import axios from "axios";
+import { IoAdd } from "react-icons/io5";
+import { BiMinus } from "react-icons/bi";
 
-function Navbar({ setSearch, search, scrolled, cartProduct, cartTotal }) {
+function Navbar({
+  setSearch,
+  search,
+  scrolled,
+  cartProduct,
+  totalPrice,
+  addToCart,
+  reduceQuantity,
+  removeItem,
+}) {
   const [cartShow, setCartShow] = useState(false);
 
-  const incCounter = useSelector((state) => state.counter.count);
+  // totalQuantity for counter start
+
+  const totalQuantity = cartProduct.reduce(
+    (quantity, item) => quantity + item.productQuantity,
+    0
+  );
+
+  // totalQuantity for counter end
 
   const navigate = useNavigate();
 
@@ -64,7 +76,7 @@ function Navbar({ setSearch, search, scrolled, cartProduct, cartTotal }) {
                       className="small_screen_cart"
                       onClick={() => cartVisible()}
                     />
-                    <p className="item_in_cart_sm">{incCounter}</p>
+                    <p className="item_in_cart_sm">{totalQuantity}</p>
                   </div>
                 </div>
                 <div className="search_section">
@@ -88,9 +100,8 @@ function Navbar({ setSearch, search, scrolled, cartProduct, cartTotal }) {
             <div className="section_three">
               <div className="account">
                 <button className="sign_in" onClick={login}>
-                  Sign In
+                  LOG IN
                 </button>
-                <img src={notification} alt="" className="notification" />
               </div>
               <div className="cart_big_screen">
                 <img
@@ -99,7 +110,7 @@ function Navbar({ setSearch, search, scrolled, cartProduct, cartTotal }) {
                   className="big_screen_cart"
                   onClick={() => cartVisible()}
                 />
-                <p className="item_in_cart_lg"></p>
+                <p className="item_in_cart_lg">{totalQuantity}</p>
               </div>
             </div>
           </div>
@@ -114,21 +125,49 @@ function Navbar({ setSearch, search, scrolled, cartProduct, cartTotal }) {
         <div className={cartShow ? "cart_active" : "cart"}>
           <h2 className="title">Your Cart</h2>
           <div className="content">
+            {totalPrice === 0 && (
+              <p className="emptyCart">You have an empty cart...</p>
+            )}
+
             {cartProduct.map((item) => {
               return (
                 <>
+                  <hr className="divider" />
                   <div className="cart_box" key={item.id}>
                     <img src="" alt="" className="cart_image" />
                     <div className="detail_box">
                       <div className="product_title">{item.productName}</div>
                       <div className="product_price">{item.productPrice}</div>
-                      <input
-                        type="number"
-                        class="cart_quantity"
-                        value={item.productQuantity}
-                      />
+                      <div className="product_qty">
+                        <IoAdd
+                          className="add"
+                          onClick={() =>
+                            addToCart(
+                              item,
+                              item.id,
+                              item.productName,
+                              item.productPrice
+                            )
+                          }
+                        />
+                        <p className="count">{item.productQuantity}</p>
+                        <BiMinus
+                          className="minus"
+                          onClick={() =>
+                            reduceQuantity(
+                              item,
+                              item.id,
+                              item.productName,
+                              item.productPrice
+                            )
+                          }
+                        />
+                      </div>
                     </div>
-                    <FaTrash className="cart_remove" />
+                    <FaTrash
+                      className="cart_remove"
+                      onClick={() => removeItem(item.id)}
+                    />
                   </div>
                 </>
               );
@@ -136,7 +175,7 @@ function Navbar({ setSearch, search, scrolled, cartProduct, cartTotal }) {
           </div>
           <div className="total">
             <div className="total_title">Total</div>
-            <div className="total_price">${cartTotal}</div>
+            <div className="total_price">${totalPrice}</div>
           </div>
           <button className="btn_buy" onClick={view_bag}>
             VIEW BAG

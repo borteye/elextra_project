@@ -1,305 +1,284 @@
-.your_bag {
-    width: 100%
+.yourBag {
+  width: 100%;
 }
 
-.your_bag .container {
-    padding: 4rem 5rem;
+.yourBag .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem;
 }
 
-.your_bag .content {
-    max-width: 1200px;
-    margin: 0 auto;
-    /* border: 1px solid red; */
+.yourBag .title {
+  font-size: 2rem;
+  /* text-align: center; */
 }
 
-.your_bag .title {
-    text-align: center;
-    font-size: 3rem;
+.yourBag .sm_shoppingBag {
+  font-size: 1rem;
+  display: none;
 }
 
-.your_bag .section_one {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 4rem 0;
+.yourBag .subTitle {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 1rem 0;
 }
 
-.your_bag .continue_shopping,
-.your_bag .bag_wishlist,
-.your_bag .check_out {
-    width: 33.33%;
+.yourBag .section_one {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
 }
 
-.your_bag .check_out {
-    display: flex;
-    justify-content: flex-end;
+.yourBag .section_one .subsec_one,
+.yourBag .section_one .subsec_two,
+.yourBag .section_one .subsec_three {
+  width: 33.33%;
 }
 
-.your_bag .bag_wishlist {
-    display: flex;
-    font-size: 1.1rem;
-    justify-content: center;
-    text-decoration: underline;
-    gap: 1.5rem;
+.yourBag .section_one .subsec_one button,
+.yourBag .section_one .subsec_three .button_enabled {
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-.your_bag .section_two {
-    display: flex;
+.yourBag .section_one .subsec_one button {
+  padding: 0.2rem 0;
+  background-color: transparent;
+  border: none;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
 }
 
-/* .your_bag .shopping_bag {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-.your_bag .one {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.yourBag .section_one .subsec_three .button_enabled,
+.yourBag .section_three .button_enabled {
+  padding: 0.8rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.your_bag .about_product {
-    margin-left: 1.5rem;
+.yourBag .section_one .subsec_three .button_disabled {
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.8rem 1rem;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.your_bag img {
-    max-width: 250px;
+.yourBag .section_three .button_disabled {
+  padding: 0.8rem 1rem;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.your_bag .details {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    gap: 2rem;
+.yourBag .section_one .subsec_two {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-decoration: underline;
 }
 
-.your_bag .count {
-    margin: 0 1rem;
-    border: 2px solid var(--primary-color);
-    border-radius: 8px;
-    padding: 0.3rem 0.7rem;
+.yourBag .section_one .subsec_three {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.your_bag .subSection_one {
-    width: 70%;
+.yourBag .emptyCart {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 500;
+  margin: 4rem 0;
 }
 
-.your_bag .subSection_two {
-    width: 30%;
-    display: flex;
-    justify-content: right;
-    /* border: 1px solid red; */
+.yourBag .row_one,
+.yourBag .row_two {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.your_bag .order_summary {
-    width: 100%;
-    max-width: 324px;
-    min-width: 324px;
-    /* min-width: 400px; */
-    background-color: white;
-    padding: 2rem 1rem;
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+.yourBag .row_two {
+  margin: 2rem 0;
 }
 
-.your_bag .order_summary .title {
-    font-size: 2.125rem;
-    font-weight: 400;
+.yourBag .data {
+  width: 20%;
+  display: flex;
+  justify-content: center;
 }
 
-.your_bag .order_summary .title {
-    text-align: left;
+.yourBag .width_80px {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
-.your_bag .subtotal,
-.your_bag .esti_shipping,
-.your_bag .total,
-.your_bag .shipping_discount {
-    display: flex;
-    justify-content: space-between;
-    margin: 1.2rem 0;
+.yourBag .minusBtn,
+.yourBag .addBtn {
+  background-color: #838383;
+  padding: 0.3rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
 }
 
-.your_bag .subtotal,
-.your_bag .esti_shipping,
-.your_bag .shipping_discount {
-    font-size: 1.12rem;
+.yourBag .qty {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
-.your_bag .total {
-    font-size: 1.7rem;
+.yourBag .minusBtn:active,
+.yourBag .addBtn:active {
+  padding: 0.2rem;
+  font-size: 1rem;
 }
 
-.your_bag .subSection_two .check_out_btn {
-    text-align: center;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-    width: 100%;
+.yourBag .price,
+.yourBag .total {
+  font-size: 1.2rem;
+  font-weight: 520;
 }
 
-.your_bag .cont_shopping_btn {
-    background-color: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    padding: 1rem 0.7rem;
-    font-size: 1.1rem;
+.yourBag .remove {
+  padding: 0.3rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #e4e4e4;
 }
 
-.your_bag .check_out_btn {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: white;
-    padding: 1rem 0.7rem;
-    font-size: 1.1rem;
+.yourBag .product {
+  flex-direction: column;
+  text-align: center;
 }
 
-.your_bag .counter {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-
+.yourBag img {
+  background-color: #e4e4e4;
+  min-width: 140px;
+  min-height: 140px;
+  max-width: 140px;
+  max-height: 140px;
 }
 
-.your_bag .price {
-    font-size: 2.5rem;
-    color: #7f7f7f;
+.yourBag .productName {
+  font-weight: bold;
 }
 
-.your_bag .counter_price_bg {
-    display: flex;
-    margin-right: 5rem;
-    gap: 2rem;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+.yourBag .details {
+  text-align: left;
+  min-width: 140px;
+  max-width: 140px;
+  margin: 0 auto;
 }
 
-.your_bag .counter_price_small {
-    display: none;
-    gap: 2rem;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+.yourBag .section_three {
+  width: 100%;
+  text-align: right;
+  margin: 0.5rem 0;
 }
 
-.your_bag .add,
-.your_bag .minus {
-    color: black;
-    cursor: pointer;
+.yourBag .section_three .title {
+  font-size: 0.8rem;
 }
 
-.your_bag button {
-    cursor: pointer;
+.yourBag .subTotal {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
 }
 
-/* ----mediaQuery-Start---- */
-
-@media screen and (max-width: 1108px) {
-    .your_bag .details {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/* ----small-screen-start---- */
+.yourBag .yourbag_sm {
+  display: none;
+}
+.yourBag .sm_section_one {
+  display: flex;
+  margin: 1rem 0;
+  justify-content: space-between;
 }
 
-
-@media screen and (max-width: 981px) {
-    .your_bag .section_two {
-        gap: 5rem;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .your_bag .subSection_one {
-        width: 100%;
-    }
-
-    .your_bag .subSection_two {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .your_bag .details {
-        flex-direction: row;
-    }
-
+.yourBag .sm_sec_one {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-@media screen and (max-width: 878px) {
-    .your_bag .bag_wishlist {
-        display: none;
-    }
+.yourBag .sm_productDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
+
+.yourBag .sm_section_two {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ----small-screen-end---- */
+
+/* ------media-Query-Start----- */
 
 @media screen and (max-width: 768px) {
-    .your_bag .container {
-        padding: 4rem 2rem;
-    }
+  .yourBag .title {
+    font-size: 1.7rem;
+  }
+  .yourBag .subTitle {
+    font-size: 1.4rem;
+  }
+  .yourBag .section_one .subsec_one button,
+  .yourBag .section_one .subsec_three button {
+    font-size: 0.8rem;
+  }
+  .yourBag .section_one .subsec_two {
+    gap: 1rem;
+  }
+  .yourBag .content {
+    padding: 4rem 2rem;
+  }
 }
 
-@media screen and (max-width: 699px) {
-    .your_bag .details {
-        flex-direction: column;
-    }
-
-    .your_bag .counter_price_bg {
-        display: none;
-    }
-
-    .your_bag .counter_price_small {
-        display: flex;
-
-    }
+@media screen and (max-width: 676px) {
+  .yourBag .yourbag_bg {
+    display: none;
+  }
+  .yourBag .yourbag_sm {
+    display: block;
+  }
 }
 
-@media screen and (max-width: 572px) {
-
-    .your_bag .cont_shopping_btn,
-    .your_bag .check_out_btn {
-        font-size: 0.8rem;
-        padding: 1rem 0.7rem;
-    }
-
-    .your_bag .section_one {
-        gap: 4rem;
-        /* border: 1px solid red; */
-    }
-
-    .your_bag .title {
-        font-size: 2.5rem;
-    }
+@media screen and (max-width: 548px) {
+  .yourBag .section_one .subsec_two {
+    display: none;
+  }
+  .yourBag .sm_shoppingBag {
+    display: contents;
+  }
 }
 
-@media screen and (max-width: 430px) {
-    .your_bag img {
-        max-width: 200px;
-    }
-
-    .your_bag .counter {
-        font-size: 1.2rem;
-    }
-
-    .your_bag .price {
-        font-size: 2rem;
-    }
+@media screen and (max-width: 410px) {
+  .yourBag img {
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+  }
 }
 
-@media screen and (max-width: 424px) {
-    .your_bag .order_summary {
-        min-width: 200px;
-    }
-
-    .your_bag .order_summary .title {
-        font-size: 1.6rem;
-    }
-}
-
-@media screen and (max-width: 374px) {
-    .your_bag img {
-        max-width: 150px;
-    }
-}
-
-/* ----mediaQuery-End---- */
+/* ------media-Query-End----- */

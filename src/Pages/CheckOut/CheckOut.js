@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./CheckOut.css";
+import axios from "axios";
 import cart from "../../svgIcons/cart-svgrepo-com.svg";
 import Mac from "../../Assets/Mac.png";
 import iPhone from "../../Assets/iphone.png";
@@ -13,10 +14,23 @@ import { useNavigate } from "react-router-dom";
 import ReturnPolicy from "../../Components/ReturnPolicy/ReturnPolicy";
 
 function CheckOut() {
-  const navigate = useNavigate();
-
   const [showSumDetails, setShowSumDetails] = useState(false);
   const [returnPolicy, setReturnPolicy] = useState(false);
+
+  //inputs start
+  const [email, setEmail] = useState();
+  const [firstName, setFirstName] = useState();
+  const [lastName, setLastName] = useState();
+  const [address1, setAddress1] = useState();
+  const [address2, setAddress2] = useState();
+  const [city, setCity] = useState();
+  const [state, setState] = useState();
+  const [zipCode, setZipCode] = useState();
+  const [phone, setPhone] = useState();
+  const [deliveryType, setDeliveryType] = useState();
+  //inputs end
+
+  const navigate = useNavigate();
 
   const viewSumDetails = () => {
     setShowSumDetails(true);
@@ -36,8 +50,36 @@ function CheckOut() {
     navigate("/payment");
   };
 
+  const login = (e) => {
+    e.preventDefault();
+    navigate("/login");
+  };
+
+  const signUp = (e) => {
+    e.preventDefault();
+    navigate("/sign-up");
+  };
+
   const returnPoli = () => {
     setReturnPolicy(true);
+  };
+
+  const handleCaptureCheckout = async (e) => {
+    e.preventDefault();
+    const shippingInfo = {
+      shipping_email: email,
+      shipping_firstName: firstName,
+      shipping_lastName: lastName,
+      shipping_address1: address1,
+      shipping_address2: address2,
+      shipping_city: city,
+      shipping_state: state,
+      shipping_zipCode: zipCode,
+      shipping_phone: phone,
+      shipping_deliveryType: deliveryType,
+    };
+    await axios.post("http://localhost:3009/checkoutInfo", shippingInfo);
+    navigate("/payment");
   };
 
   return (
@@ -131,13 +173,24 @@ function CheckOut() {
             </p>
             <div className="preamble">
               <div className="email">
-                <input type="text" placeholder="Email*" />
+                <input
+                  type="text"
+                  placeholder="Email*"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
                 <p>We will send order confrimation to this address</p>
               </div>
               <div className="membership">
-                Members get <b>50% discount free shipping + rewards </b> on this
-                purchase <span className="underline">Join For Free </span> or{" "}
-                <span className="underline">Log In</span>
+                Members get <b>35% discount free shipping </b> on this purchase{" "}
+                <span className="underline" onClick={signUp}>
+                  Join For Free{" "}
+                </span>{" "}
+                or{" "}
+                <span className="underline" onClick={login}>
+                  Log In
+                </span>
               </div>
             </div>
             <div className="details">
@@ -145,17 +198,23 @@ function CheckOut() {
                 <div className="shipping_delivery">
                   <div className="title">1. Shipping & Delivery</div>
                   <div className="shipping">
-                    <form>
+                    <form onSubmit={handleCaptureCheckout}>
                       <div className="name">
                         <input
                           type="text"
                           className="f_name"
                           placeholder="First Name*"
+                          onChange={(e) => {
+                            setFirstName(e.target.value);
+                          }}
                         />
                         <input
                           type="text"
                           className="l_name"
                           placeholder="Last Name*"
+                          onChange={(e) => {
+                            setLastName(e.target.value);
+                          }}
                         />
                       </div>
                       <div className="address">
@@ -163,11 +222,17 @@ function CheckOut() {
                           type="text"
                           className="address_one"
                           placeholder="Address 1*"
+                          onChange={(e) => {
+                            setAddress1(e.target.value);
+                          }}
                         />
                         <input
                           type="text"
                           className="address_two"
                           placeholder="Address 1 (optional)"
+                          onChange={(e) => {
+                            setAddress2(e.target.value);
+                          }}
                         />
                       </div>
                       <div className="residence">
@@ -176,11 +241,19 @@ function CheckOut() {
                             type="text"
                             className="city"
                             placeholder="City*"
+                            onChange={(e) => {
+                              setCity(e.target.value);
+                            }}
                           />
                           <div className="state">
                             <fieldset>
                               <legend>state*</legend>
-                              <select className="states">
+                              <select
+                                className="states"
+                                onChange={(e) => {
+                                  setState(e.target.value);
+                                }}
+                              >
                                 <option value="">Select...</option>
                                 <option value="">jk</option>
                                 <option value="">l</option>
@@ -199,6 +272,9 @@ function CheckOut() {
                             type="text"
                             className="zip_code"
                             placeholder="ZIP Code*"
+                            onChange={(e) => {
+                              setZipCode(e.target.value);
+                            }}
                           />
                         </div>
                       </div>
@@ -208,59 +284,75 @@ function CheckOut() {
                             type="text"
                             className="phone"
                             placeholder="Phone Number*"
+                            onChange={(e) => {
+                              setPhone(e.target.value);
+                            }}
                           />
                         </div>
                         <p>Example: (999) 999-9999</p>
                       </div>
+                      <div className="delivery">
+                        <div className="title">Select Delivery Option</div>
+
+                        <p>
+                          Due to Hurricane lan, deliveries to some regions in
+                          Florida will be delayed.
+                        </p>
+                        <hr />
+                        <ul>
+                          <li>
+                            <div className="standard_level">
+                              <input
+                                type="radio"
+                                name="deliveryOption"
+                                value="6.00"
+                                onChange={(e) =>
+                                  setDeliveryType(e.target.value)
+                                }
+                              />
+                              <p>
+                                {" "}
+                                Standard Delivery (Est. arrival Oct 07-Oct 11)
+                              </p>
+                            </div>
+                            <div className="level_price">$6.00</div>
+                          </li>
+                          <li>
+                            <div className="expedited_level">
+                              <input
+                                type="radio"
+                                name="deliveryOption"
+                                value="12.00"
+                                onChange={(e) =>
+                                  setDeliveryType(e.target.value)
+                                }
+                              />
+                              <p>
+                                Expedited Delivery (Est. arrival Oct 05-Oct 06)
+                              </p>
+                            </div>
+                            <div className="level_price">$12.00</div>
+                          </li>
+                          <li>
+                            <div className="rush_level">
+                              <input
+                                type="radio"
+                                name="deliveryOption"
+                                value="19.00"
+                                onChange={(e) =>
+                                  setDeliveryType(e.target.value)
+                                }
+                              />
+                              <p> Rush Delivery (Est. arrival Oct 04-Oct-05)</p>
+                            </div>
+                            <div className="level_price">$19.00</div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="continue_to_payment">
+                        <button type="submit">CONTINUE TO PAYMENT</button>
+                      </div>
                     </form>
-                  </div>
-
-                  <div className="delivery">
-                    <div className="title">Select Delivery Option</div>
-
-                    <p>
-                      Due to Hurricane lan, deliveries to some regions in
-                      Florida will be delayed.
-                    </p>
-                    <hr />
-                    <ul>
-                      <li>
-                        <div className="free_level">
-                          <input type="radio" />
-                          <p>
-                            Become a Greater Rewards member for 50% discount
-                            shipping always
-                          </p>
-                        </div>
-                        <div className="level_price">
-                          <b>Free</b>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="standard_level">
-                          <input type="radio" />
-                          <p> Standard Delivery (Est. arrival Oct 07-Oct 11)</p>
-                        </div>
-                        <div className="level_price">$6.00</div>
-                      </li>
-                      <li>
-                        <div className="expedited_level">
-                          <input type="radio" />
-                          <p>Expedited Delivery (Est. arrival Oct 05-Oct 06)</p>
-                        </div>
-                        <div className="level_price">$12.00</div>
-                      </li>
-                      <li>
-                        <div className="rush_level">
-                          <input type="radio" />
-                          <p> Rush Delivery (Est. arrival Oct 04-Oct-05)</p>
-                        </div>
-                        <div className="level_price">$19.00</div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="continue_to_payment">
-                    <button onClick={payment}>CONTINUE TO PAYMENT</button>
                   </div>
                   <div className="payments">
                     <p>2. Payment</p>
@@ -331,7 +423,6 @@ function CheckOut() {
                       </div>
                       <div className="product_id">
                         <p>
-                          {" "}
                           <b>ID</b>: 819924003
                         </p>
                       </div>

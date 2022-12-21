@@ -6,6 +6,7 @@
 
 :root {
   --primary-color: rgb(255, 127, 7);
+  --disables-button: #e4e4e4;
 }
 
 input {

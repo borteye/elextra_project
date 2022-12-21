@@ -1,0 +1,92 @@
+.category .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem;
+}
+
+.category .title {
+  font-size: 1.7rem;
+}
+
+.category .overAll {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.category .card {
+  position: relative;
+  transition: 0.5s ease;
+  margin: 2rem 0 2rem 0;
+  /* border: 1px solid red; */
+}
+.category .card:hover {
+  scale: 1.2;
+}
+.category .sec_one {
+  width: 100%;
+  text-align: center;
+  padding-top: 2.5rem;
+}
+
+.category .category_name {
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  background-color: white;
+}
+
+.category .sec_two {
+  text-align: center;
+  width: 100%;
+  max-width: 60px;
+  margin: 0 auto;
+}
+
+.category .image {
+  position: absolute;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 50%;
+  border: 2.5px solid #e4e4e4;
+  top: 0;
+}
+
+.category img {
+  width: 25px;
+  padding: 1rem;
+
+  /* transition: 0.2s ease; */
+}
+
+.category .image:hover {
+  margin-top: -0.6rem;
+}
+
+@media screen and (max-width: 768px) {
+  .category .content {
+    padding: 4rem 2rem;
+  }
+
+  .category .card:hover {
+    z-index: 1;
+  }
+
+  .category .category_name {
+    padding: 2rem 1.5rem;
+  }
+
+  .category img {
+    width: 18px;
+    padding: 0.7rem;
+
+    /* transition: 0.2s ease; */
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .category .content {
+    display: none;
+  }
+}

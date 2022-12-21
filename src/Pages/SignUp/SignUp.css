@@ -1,139 +1,129 @@
 .signUp {
-    width: 100%;
+  width: 100%;
 }
 
 .signUp .container {
-    padding: 4rem;
+  padding: 4rem;
 }
 
-/* .signUp .content {
-    border: 1px solid red;
-} */
+/* .login .content {
+      border: 1px solid red;
+  } */
 
 .signUp .overall_signUp {
-    display: flex;
-}
-
-.signUp .section_one {
-    background-color: blueviolet;
-    padding: 5%;
-    width: 40%;
-}
-
-.signUp .section_two {
-    width: 34%;
-    padding: 5% 8%;
-    background-color: white;
-}
-
-.signUp .section_one .image {
-    width: 80%;
-    margin: 0 auto;
-}
-
-.signUp .section_one img {
-    width: 100%;
-    max-width: 330px;
-    max-height: 330px;
-}
-
-.signUp .preamble {
-    width: 100%;
-    text-align: center;
-    color: white;
-}
-
-.signUp .section_one .login_btn {
-    width: 100%;
-}
-
-.signUp .section_one .login_btn button {
-    width: 100%;
-    height: 2.5rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    background-color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.signUp .preamble,
-.signUp .section_one .login_btn {
-    margin-top: 3rem;
+  max-width: 300px;
+  min-width: 32%;
+  margin: 0 auto;
 }
 
 .signUp .title {
-    width: 100%;
-    font-size: 2.5rem;
-    font-weight: bolder;
-    text-align: center;
+  font-size: 2.2rem;
+  font-weight: bolder;
 }
 
-.signUp .alert {
-    color: #a8a5a5;
-    text-align: center;
-    margin-top: 1rem;
+.signUp .subTitle {
+  font-size: 1.3rem;
+  font-weight: 100;
+}
+
+.signUp hr {
+  margin: 1rem 0;
+}
+
+.signUp input {
+  width: 99%;
+  font-size: 0.89rem;
+  padding-left: 5%;
+  border-radius: 0 5px 5px 0;
+  border: 1px solid black;
+}
+
+.signUp .username img,
+.signUp .email img,
+.signUp .password img {
+  max-width: 22px;
+  max-height: 22px;
+  background-color: var(--primary-color);
+  padding: 1rem;
+  border-radius: 5px 0 0 5px;
 }
 
 .signUp .username,
 .signUp .email,
 .signUp .password {
-    display: flex;
-    flex-direction: column;
-}
-
-.signUp label {
-    font-size: 1.2rem;
-    font-weight: 500;
-}
-
-.signUp form {
-    margin-top: 4.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.signUp input {
-    height: 2.5rem;
-    outline: none;
-    border: none;
-    background-color: #e4e4e4;
-    border-radius: 3px;
-    padding-left: 1rem;
-}
-
-.signUp .forgot_password {
-    width: 100%;
-    text-align: right;
-    margin-top: 0.5rem;
-}
-
-.signUp .signUp_btn {
-    width: 100%;
-    margin-top: 2.5rem;
-}
-
-.signUp .signUp_btn button {
-    width: 100%;
-    height: 2.5rem;
-    font-weight: bold;
-    color: white;
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.signUp .existing_acc {
-    text-align: center;
-    margin-top: 5rem;
+  display: flex;
+  margin: 1rem 0;
 }
 
 .signUp .login {
-    color: var(--primary-color);
-    font-weight: 520;
-    cursor: pointer;
+  color: var(--primary-color);
+  cursor: pointer;
 }
+.signUp .signUpBtn {
+  text-align: right;
+  margin: 1rem 0;
+}
+
+.signUp .signUpBtn button {
+  font-size: 0.89rem;
+  font-weight: bolder;
+  padding: 0.7rem 2rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+.signUp .signUpBtn button:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.signUp .or {
+  overflow: hidden;
+  text-align: center;
+}
+
+.signUp .or:before,
+.signUp .or:after {
+  background-color: #b8b8b8;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.signUp .or:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.signUp .or:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+.signUp .other_socials {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 1.5rem;
+}
+
+.signUp .other_socials button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* -----media-Query-Start---- */
+@media screen and (max-width: 768px) {
+  .signUp .container {
+    padding: 4rem 2rem;
+  }
+}
+
+/* -----media-Query-end---- */

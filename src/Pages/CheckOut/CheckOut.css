@@ -36,16 +36,11 @@
   margin-top: 1.5rem;
 }
 
-.check_out .midScreen_image {
-  width: 50%;
-}
-
 .check_out .midScreen_image img {
   width: 100%;
-  height: 100%;
   background-color: whitesmoke;
   /* padding: 1.5rem; */
-  max-width: 370px;
+  max-width: 200px;
 }
 
 .check_out .midScreen .closeIcon {
@@ -172,6 +167,7 @@
 
 .check_out .underline {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .check_out .details {
@@ -475,5 +471,14 @@
 
   .check_out .state {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 342px) {
+  .check_out .midScreen_image img {
+    width: 100%;
+    background-color: whitesmoke;
+    /* padding: 1.5rem; */
+    min-width: 150px;
   }
 }
